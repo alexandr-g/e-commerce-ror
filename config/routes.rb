@@ -1,5 +1,77 @@
 Rails.application.routes.draw do
 
+  get 'payment/index'
+
+  get 'payment/new'
+
+  get 'payment/create'
+
+  get 'payment/edit'
+
+  get 'payment/delete'
+
+  get 'payment/show'
+
+  get 'order_details/index'
+
+  get 'order_details/new'
+
+  get 'order_details/create'
+
+  get 'order_details/edit'
+
+  get 'order_details/delete'
+
+  get 'order_details/show'
+
+  get 'order/index'
+
+  get 'order/new'
+
+  get 'order/create'
+
+  get 'order/edit'
+
+  get 'order/delete'
+
+  get 'order/show'
+
+  get 'adress/index'
+
+  get 'adress/new'
+
+  get 'adress/create'
+
+  get 'adress/edit'
+
+  get 'adress/delete'
+
+  get 'adress/show'
+
+  get 'products/index'
+
+  get 'products/new'
+
+  get 'products/create'
+
+  get 'products/edit'
+
+  get 'products/delete'
+
+  get 'products/show'
+
+  get 'users/index'
+
+  get 'users/new'
+
+  get 'users/create'
+
+  get 'users/edit'
+
+  get 'users/delete'
+
+  get 'users/show'
+
   root 'pages#home'
   get 'pages/home'
   get 'pages/feedback'
