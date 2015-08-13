@@ -3,7 +3,6 @@ class CreateOrderDetails < ActiveRecord::Migration
     create_table :order_details do |t|
       t.integer :product_id
       t.decimal :price
-      t.decimal :total
       t.integer :order_id
       t.integer :quantity
 

@@ -14,14 +14,11 @@
 ActiveRecord::Schema.define(version: 20150813074140) do
 
   create_table "addresses", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "address1"
+    t.string   "address"
     t.string   "city"
-    t.integer  "state_id"
-    t.string   "state_name"
+    t.string   "state"
+    t.string   "country"
     t.string   "zip_code"
-    t.integer  "phone_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,7 +26,6 @@ ActiveRecord::Schema.define(version: 20150813074140) do
   create_table "order_details", force: :cascade do |t|
     t.integer  "product_id"
     t.decimal  "price"
-    t.decimal  "total"
     t.integer  "order_id"
     t.integer  "quantity"
     t.datetime "created_at", null: false
@@ -37,8 +33,10 @@ ActiveRecord::Schema.define(version: 20150813074140) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string   "ip_address"
     t.integer  "user_id"
+    t.string   "status"
+    t.decimal  "total"
+    t.string   "ip_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,7 +63,8 @@ ActiveRecord::Schema.define(version: 20150813074140) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email"
     t.string   "address"
     t.datetime "created_at", null: false
