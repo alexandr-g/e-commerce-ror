@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @product = Product.all
+    @products = Product.all
   end
 
   def new
@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   def create
       @product = Product.new(product_params)
       if @product.save
-        redirect_to :action => 'index'
+        redirect_to :action => 'show'
       else
         flash[:error]
         render action: 'new'
@@ -24,6 +24,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    # @product = Product.find(product_params[:id])
+    @product = Product.all
   end
 
 

@@ -1,2 +1,24 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1>List of all products</h1>
+<div class="container-fluid">
+
+  <table class="table table-bordered">
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+
+    <% @product.each do |products| %>
+      <tr>
+        <td><%= products.name %></td>
+        <td><%= products.price %></td>
+        <td><%= products.description %></td>
+        <td><%= link_to 'Show', products_path %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'Add new product', new_product_path, class: 'btn btn-primary' %><br>
+
+</div>
