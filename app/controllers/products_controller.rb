@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @product = Product.all
   end
 
   def new
@@ -8,24 +8,43 @@ class ProductsController < ApplicationController
   end
 
   def create
-      @product = Product.new(product_params)
+      @product = Product.new product_params
+
       if @product.save
-        redirect_to :action => 'show'
+        redirect_to @product
       else
-        flash[:error]
-        render action: 'new'
+        render 'new'
     end
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
 
   def delete
   end
 
+  def update
+		@product = Product.find(params[:id])
+
+		if @product.update(product_params)
+			redirect_to @product
+		else
+			render 'edit'
+		end
+	end
+
+  def destroy
+		@product = Product.find(params[:id])
+		@product.destroy
+
+		redirect_to products_path
+	end
+
   def show
     # @product = Product.find(product_params[:id])
-    @product = Product.all
+    @product = Product.find(params[:id])
+    # @product = Product.all
   end
 
 
