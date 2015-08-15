@@ -42,9 +42,7 @@ class ProductsController < ApplicationController
 	end
 
   def show
-    # @product = Product.find(product_params[:id])
     @product = Product.find(params[:id])
-    # @product = Product.all
   end
 
 
